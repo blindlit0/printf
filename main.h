@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 /**
- * struct fmt - function to check for formats
+ * struct conv - function to check for formats
  * @type: format to print
  * @f: print function to use
  */
@@ -21,7 +21,7 @@ typedef struct conv con_v;
 
 
 int _printf(const char *format, ...);
-int print_op(const char *format, fmt_t *print_arr, va_list list);
+int print_op(const char *format, con_v *print_arr, va_list list);
 int cha(va_list character);
 int str(va_list string);
 int _inte(va_list integ);
