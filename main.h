@@ -1,5 +1,5 @@
-#ifndef main.h
-#define main.h
+#ifndef MAIN_H
+#define MAIN_H
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,17 +11,20 @@
  * @f: print function to use
  */
 
-typedef struct fmt
+struct conv
 {
 	char *type;
 	int (*f)();
-} fmt_t;
+};
+
+typedef struct conv con_v;
+
 
 int _printf(const char *format, ...);
 int print_op(const char *format, fmt_t *print_arr, va_list list);
-int ch(va_list character);
+int cha(va_list character);
 int str(va_list string);
-int _int(va_list integ);
+int _inte(va_list integ);
 int _ui(va_list unsign);
 int _oct(va_list octo);
 int _rot13(va_list rot);
