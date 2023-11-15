@@ -8,7 +8,7 @@
 
 int _inte(va_list integ)
 {
-	int a, expo = 1, len = 0;
+	int a, expon = 1, len = 0;
 	unsigned int n;
 
 	a = va_arg(integ, int);
@@ -20,14 +20,14 @@ int _inte(va_list integ)
 	}
 	else
 		n = a;
-	while (n / expo > 9)
-		expo *= 10;
+	while (n / expon > 9)
+		expon *= 10;
 
-	while (expo != 0)
+	while (expon != 0)
 	{
-		len = len + _putchar(n / expo + '0');
-		n = n % expo;
-		expo = expo / 10;
+		len = len + _putchar(n / expon + '0');
+		n = n % expon;
+		expon = expon / 10;
 	}
 	return (len);
 }
