@@ -1,1 +1,2 @@
-Team project on printf
+Team project on printf.
+Collaborators: Frederick Napey, Harold Adjei
