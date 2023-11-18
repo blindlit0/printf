@@ -1,39 +1,49 @@
 #ifndef MAIN_H
 #define MAIN_H
+
 #include <stdarg.h>
 #include <stdio.h>
+#include <limits.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+
 /**
- * struct conv - function to check for formats
- * @type: format to print
- * @f: print function to use
+ * struct format - match the conversion specifiers for printf
+ * @id: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
+ * @f: type pointer to function for the conversion specifier
+ *
  */
 
-struct conv
+typedef struct format
 {
-	char *type;
+	char *id;
 	int (*f)();
-};
+} convert_match;
 
-typedef struct conv con_v;
-
-
-int _printf(const char *format, ...);
-int print_op(const char *format, con_v *print_arr, va_list list);
-int cha(va_list character);
-int str(va_list string);
-int _inte(va_list integ);
-int _ui(va_list unsign);
-int _oct(va_list octo);
-int _rot13(va_list rot);
-int _hex_str(unsigned int n, unsigned int hex, char alpha);
-int _hex_l(va_list hexa);
-int _hex_u(va_list hexa);
+int printf_pointer(va_list val);
+int printf_hex_aux(unsigned long int num);
+int printf_HEX_aux(unsigned int num);
+int printf_exclusive_string(va_list val);
+int printf_HEX(va_list val);
+int printf_hex(va_list val);
+int printf_oct(va_list val);
+int printf_unsigned(va_list args);
+int printf_bin(va_list val);
+int printf_srev(va_list args);
+int printf_rot13(va_list args);
+int printf_int(va_list args);
+int printf_dec(va_list args);
 int _strlen(char *s);
-int _bin(va_list bin);
+int *_strcpy(char *dest, char *src);
+int _strlenc(const char *s);
+int rev_string(char *s);
+int _strlenc(const char *s);
+int printf_37(void);
+int printf_char(va_list val);
+int printf_string(va_list val);
 int _putchar(char c);
-int print_rev(va_list 1);
+int _printf(const char *format, ...);
+
 #endif
 
